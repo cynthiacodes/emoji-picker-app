@@ -6,12 +6,26 @@ export default function EmojiPicker(): JSX.Element {
   const [previousEmojiFromCurrentRender, queueRerenderWithNewpreviousEmoji] =
     useState("🤣");
 
-    const handleEggEmojiClick = () => {
-        queueRerenderWithNewEmoji("🍳");
-        queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
-      };
-
-
+  const handleEggEmojiClick = () => {
+    queueRerenderWithNewEmoji("🍳");
+    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+  };
+  const handleClockEmojiClick = () => {
+    queueRerenderWithNewEmoji("⏰");
+    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+  };
+  const handlePlateEmojiClick = () => {
+    queueRerenderWithNewEmoji("🍽️");
+    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+  };
+  const handleYummyEmojiClick = () => {
+    queueRerenderWithNewEmoji("😋");
+    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+  };
+  const handleBedEmojiClick = () => {
+    queueRerenderWithNewEmoji("🛌");
+    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+  };
 
   return (
     <>
@@ -20,6 +34,10 @@ export default function EmojiPicker(): JSX.Element {
       <p>Current emoji: {currentEmojiFromCurrentRender}</p>
       <hr />
       <button onClick={handleEggEmojiClick}>🍳</button>
+      <button onClick={handleClockEmojiClick}>⏰</button>
+      <button onClick={handlePlateEmojiClick}>🍽️</button>
+      <button onClick={handleYummyEmojiClick}>😋</button>
+      <button onClick={handleBedEmojiClick}>🛌</button>
     </>
   );
 }
