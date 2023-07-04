@@ -1,7 +1,7 @@
-import { greet } from "./utils/greet";
+import EmojiPicker from "./component/EmojiPicker";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return <EmojiPicker/>;
 }
 
 export default App;
