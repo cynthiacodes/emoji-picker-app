@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export default function EmojiPicker(): JSX.Element {
   const [currentEmojiFromCurrentRender, queueRerenderWithNewEmoji] =
-    useState("💃🏽");
+    useState("");
   const [previousEmojiFromCurrentRender, queueRerenderWithNewpreviousEmoji] =
-    useState("🤣");
+    useState("");
 
   const handleEggEmojiClick = () => {
     queueRerenderWithNewEmoji("🍳");
