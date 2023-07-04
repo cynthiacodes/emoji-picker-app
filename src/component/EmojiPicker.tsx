@@ -6,13 +6,20 @@ export default function EmojiPicker(): JSX.Element {
   const [previousEmojiFromCurrentRender, queueRerenderWithNewpreviousEmoji] =
     useState("🤣");
 
+    const handleEggEmojiClick = () => {
+        queueRerenderWithNewEmoji("🍳");
+        queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+      };
+
+
+
   return (
     <>
       <h1>Emoji picker</h1>
       <p>Previous emoji: {previousEmojiFromCurrentRender}</p>
       <p>Current emoji: {currentEmojiFromCurrentRender}</p>
       <hr />
-      <button onClick={()=> queueRerenderWithNewEmoji("🍳")}>🍳</button>
+      <button onClick={handleEggEmojiClick}>🍳</button>
     </>
   );
 }
