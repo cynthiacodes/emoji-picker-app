@@ -7,4 +7,3 @@ test.skip("renders greeting", () => {
   const soughtElement = screen.getByText(/Hello, World!/i);
   expect(soughtElement).toBeInTheDocument();
 });
-
