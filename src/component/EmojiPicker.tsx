@@ -2,35 +2,35 @@ import { useState } from "react";
 
 export default function EmojiPicker(): JSX.Element {
   const [currentEmojiFromCurrentRender, queueRerenderWithNewEmoji] =
-    useState<string>();
-  const [previousEmojiFromCurrentRender, queueRerenderWithNewpreviousEmoji] =
-    useState<string>();
+    useState<string>("");
+  const [storedEmojisFromCurrentRender, queueRerenderWithNewStoreEmoji] =
+    useState<string[]>([]);
 
   const handleEggEmojiClick = () => {
     queueRerenderWithNewEmoji("🍳");
-    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+    queueRerenderWithNewStoreEmoji(prevStoredEmojis => [...prevStoredEmojis,currentEmojiFromCurrentRender]);
   };
   const handleClockEmojiClick = () => {
     queueRerenderWithNewEmoji("⏰");
-    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+    queueRerenderWithNewStoreEmoji(prevStoredEmojis => [...prevStoredEmojis,currentEmojiFromCurrentRender]);
   };
   const handlePlateEmojiClick = () => {
     queueRerenderWithNewEmoji("🍽️");
-    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+    queueRerenderWithNewStoreEmoji(prevStoredEmojis => [...prevStoredEmojis,currentEmojiFromCurrentRender]);
   };
   const handleYummyEmojiClick = () => {
     queueRerenderWithNewEmoji("😋");
-    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+    queueRerenderWithNewStoreEmoji(prevStoredEmojis => [...prevStoredEmojis,currentEmojiFromCurrentRender]);
   };
   const handleBedEmojiClick = () => {
     queueRerenderWithNewEmoji("🛌");
-    queueRerenderWithNewpreviousEmoji(currentEmojiFromCurrentRender);
+    queueRerenderWithNewStoreEmoji(prevStoredEmojis => [...prevStoredEmojis,currentEmojiFromCurrentRender]);
   };
 
   return (
     <>
       <h1>Emoji picker</h1>
-      <p>Previous emoji: {previousEmojiFromCurrentRender}</p>
+      <p>Previous emoji choices: {storedEmojisFromCurrentRender}</p>
       <p>Current emoji: {currentEmojiFromCurrentRender}</p>
       <hr />
       <button onClick={handleEggEmojiClick}>🍳</button>
