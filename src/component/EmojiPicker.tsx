@@ -39,11 +39,13 @@ export default function EmojiPicker(): JSX.Element {
       currentEmoji,
     ]);
   };
-const listOfEmojis = (
-<ul>
-  {storedEmojis.map((emojiElement, index) => <li key = {index}>{emojiElement}</li>)}
-</ul>);
-
+  const listOfEmojis = (
+    <ul>
+      {storedEmojis.map((emojiElement, index) => (
+        <li key={index}>{emojiElement}</li>
+      ))}
+    </ul>
+  );
 
   return (
     <>
