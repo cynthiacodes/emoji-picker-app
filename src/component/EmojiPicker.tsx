@@ -39,18 +39,15 @@ export default function EmojiPicker(): JSX.Element {
       currentEmoji,
     ]);
   };
-  const listOfEmojis = (
-    <ul>
-      {storedEmojis.map((emojiElement, index) => (
-        <li key={index}>{emojiElement}</li>
-      ))}
-    </ul>
-  );
+  const listOfEmojis = storedEmojis.map((emojiElement, index) => (
+    <li key={index}>{emojiElement}</li>
+  ));
 
   return (
     <>
       <h1>Emoji picker</h1>
-      <p>Previous emoji choices:{listOfEmojis}</p>
+      <p>Previous emoji choices:</p>
+      <ul>{listOfEmojis}</ul>
       <p>Current emoji: {currentEmoji}</p>
       <hr />
       <button onClick={handleEggEmojiClick}>🍳</button>
